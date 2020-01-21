@@ -1,0 +1,28 @@
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+#result{
+  display: flex;
+  overflow: auto;
+  height: 300px;
+}
+#hidX,#hidR,#hidY{
+  background: red;
+}
+h2{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+
+.p-grid{
+  display: flex;
+}
+
+

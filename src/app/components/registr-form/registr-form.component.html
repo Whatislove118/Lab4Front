@@ -1,0 +1,33 @@
+
+  <form id="form" #regForm='ngForm' >
+    <div class="p-grid p-align-center p-justify-center">
+      <div class="p-col-7 p-offset-1">
+        <h4 class="grid-item">Авторизация</h4>
+
+        <div class="ui-inputgroup grid-item">
+          <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+          <input type="text"  placeholder="login" [(ngModel)]="login" pInputText name="login" maxlength="7"/>
+        </div>
+
+
+      <div class="ui-inputgroup grid-item">
+        <span class="ui-inputgroup-addon"><i class="pi pi-key" style="line-height: 1.25;"></i></span>
+        <input type="password" pPassword [(ngModel)]="password" name="password" maxlength="10" />
+      </div>
+
+      <div class="p-grid p-justify-center">
+        <div class="p-col-7 btn-register">
+          <input type="submit" class ="ui-button-success" pButton  value="Регистрация" (click)="sendToServer()">
+        </div>
+        <div class="p-col-7 btn-login">
+          <input type="submit" pButton  value="Вход"  (click)="sendToServerToLogin()">
+        </div>
+    </div>
+    </div>
+    </div>
+  </form>
+  <div id="answer">
+    <p>{{answer}}</p>
+  </div>
+
+

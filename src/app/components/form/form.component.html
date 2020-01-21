@@ -1,0 +1,43 @@
+<div class="p-grid">
+<div id="main_form" class="p-col-12 p-md-12 p-lg-4">
+  <p-fieldset legend="Форма" [toggleable]="true">
+    <h2>Ввод координат:</h2>
+  <form #myForm="ngForm" class="p-grid  p-justify-around" (ngSubmit)="sendToServer();">
+    <mark class="p-col-4">Введите X</mark>
+    <mark class="p-col-4">Введите Y</mark>
+    <mark class="p-col-4">Введите R</mark>
+    <input type="text" class="p-col-4 inp" placeholder="Введите X (-5...5)" id="xInput" [(ngModel)]="this.X" name="x" (blur)="validateX(this.X)">
+    <input type="text" class="p-col-4 inp" placeholder="Введите Y (-5...3)" id="yInput" [(ngModel)]="this.Y" name="y" (blur)="validateY(this.Y)">
+    <input type="text" class="p-col-4 inp" placeholder="Введите R (-1...5)" id="rInput" [(ngModel)]="this.R" name="r" (blur)="drawGraphWithR(this.R);">
+    <input type="submit" class="p-col-12" value="Проверить" id="submit" >
+  </form>
+    <a (click)="goToIndex()">LOGOUT</a>
+  </p-fieldset>
+</div>
+    <div class="p-col-12 p-md-12 p-md-order-last p-lg-4">
+  <p-fieldset legend="График" id="canvas_toggleable" [toggleable]="true" class="p-grid p-justify-center">
+    <canvas (click)="checkClick(this.$event)" id="graph" width="280px" height="280px" style="border: 2px solid black;border-radius:25px;background: url('https://i.pinimg.com/originals/7d/de/e0/7ddee0a1c68655fa464765643a408587.jpg');
+    background-position-x: -50px;background-position-y: -50px"></canvas>
+  </p-fieldset>
+    </div>
+    <div class="p-col-12 p-md-12 p-lg-4"  id="result">
+    <p-fieldset legend="Результаты"  [toggleable]="true">
+        <table>
+          <tr>
+            <td>X</td>
+            <td>Y</td>
+            <td>R</td>
+            <td>Probil?</td>
+          </tr>
+          <tr *ngFor="let p of arrPoints">
+            <td>{{p.x}}</td>
+            <td>{{p.y}}</td>
+            <td>{{p.r}}</td>
+            <td>{{checkProbil(p.inArea)}}</td>
+          </tr>
+        </table>
+    </p-fieldset>
+    </div>
+</div>
+<mark id="hidX" hidden>Введите корректный X</mark> <br><mark id="hidY" hidden>Введите корректный Y</mark><br> <mark  id="hidR" hidden>Введите корректный R</mark> <br>
+
