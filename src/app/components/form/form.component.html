@@ -6,9 +6,9 @@
     <mark class="p-col-4">Введите X</mark>
     <mark class="p-col-4">Введите Y</mark>
     <mark class="p-col-4">Введите R</mark>
-    <input type="text" class="p-col-4 inp" placeholder="Введите X (-5...5)" id="xInput" [(ngModel)]="this.X" name="x" (blur)="validateX(this.X)">
-    <input type="text" class="p-col-4 inp" placeholder="Введите Y (-5...3)" id="yInput" [(ngModel)]="this.Y" name="y" (blur)="validateY(this.Y)">
-    <input type="text" class="p-col-4 inp" placeholder="Введите R (-1...5)" id="rInput" [(ngModel)]="this.R" name="r" (blur)="drawGraphWithR(this.R);">
+    <input type="text" class="p-col-4 inp" placeholder="Введите X (-5...5)" id="xInput" [(ngModel)]="this.X" name="x">
+    <input type="text" class="p-col-4 inp" placeholder="Введите Y (-5...3)" id="yInput" [(ngModel)]="this.Y" name="y">
+    <input type="text" class="p-col-4 inp" placeholder="Введите R (-1...5)" id="rInput" [(ngModel)]="this.R" name="r">
     <input type="submit" class="p-col-12" value="Проверить" id="submit" >
   </form>
     <a (click)="goToIndex()">LOGOUT</a>

@@ -137,10 +137,8 @@ export class FormComponent implements OnInit {
     this.point.x=this.X;
     this.point.y=this.Y;
     this.point.r=this.R;
-    this.validateY(this.point.y);
-    this.validateX(this.point.x);
     this.validateR(this.point.r);
-    let check:boolean=this.validateX(this.point.x)&&this.validateY(this.point.y)&&this.validateR(this.point.r);
+    let check:boolean=true  ;
     this.point.user=this.httpService.getUser();
     if(this.user==undefined){
       alert("Авторизация провалена! Вы будете возвращены на страницу авторизации!");
@@ -212,32 +210,6 @@ export class FormComponent implements OnInit {
       return true;
     }
   }
-  validateX(x:number):boolean{
-    if(this.validateString(this.X)){
-      if(this.X<5 && this.X>-5){
-        return true;
-      }else{
-        document.getElementById('hidX').hidden=false;
-        return false;
-      }
-    }else{
-      document.getElementById('hidX').hidden=false;
-    }
-  }
-  validateY(y:number):boolean {
-    if (this.validateString(this.Y)) {
-      if (this.Y < 3 && this.Y > -5) {
-        return true;
-      } else {
-        document.getElementById('hidY').hidden=false;
-        return false;
-      }
-    }
-    else{
-      document.getElementById('hidY').hidden=false;
-    }
-  }
-
   validateR(r:number):boolean{
     if(this.validateString(r)){
       if(r<5 && r>-1){
